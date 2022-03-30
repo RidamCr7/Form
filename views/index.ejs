@@ -10,7 +10,7 @@
     <!-- bootstrap cdn -->
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
@@ -23,17 +23,17 @@
                         <div class="form-header">
                             <h1>Course Reminder</h1>
                         </div>
-                        <form>
+                        <form method="POST" action="/submit">
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Course Code">
+                                <input class="form-control" type="text" placeholder="Course Code" name="name1">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Course Name">
+                                <input class="form-control" type="text" placeholder="Course Name" name="name2">
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input class="form-control" type="email" placeholder="Enter your Email">
+                                        <input class="form-control" type="text" placeholder="Link to Lecture">
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
 
@@ -75,7 +75,15 @@
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
     <!-- bootstrap cdn  -->
     <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js'></script>
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
+
+<form>
+    /submit
+</form>
+
+<form action="">
+    route 2
+</form>
