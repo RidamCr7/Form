@@ -20,6 +20,7 @@ app.set('view engine', 'ejs'); // setting ejs as the devault viewing engine
 mongoose.connect("mongodb+srv://Ridam:nuxyTXqlwVCqEBG2@cluster0.p0ltv.mongodb.net/form");
 
 
+///////////////////////
 const courseSchema = new mongoose.Schema({
     courseCode : {
         type:String,
@@ -30,6 +31,9 @@ const courseSchema = new mongoose.Schema({
 
 const Course = mongoose.model("course", courseSchema);
 
+///////////////////
+
+
 app.get("/", function(req,res){
 
     res.render("index");
@@ -39,10 +43,11 @@ app.post("/submit", function(req,res){
     const form_body = req.body;
     // console.log(form_body);
 
-    const myCourse = {
-        c_code : form_body.name1,
-        c_name : form_body.name2
-    }
+    const myCourse = new Course({
+        courseCode : form_body.name1,
+        courseName : form_body.name2
+    });
+    myCourse.save();
     console.log(myCourse);
     res.redirect("/");
 })
